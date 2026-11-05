@@ -354,6 +354,7 @@ footer .tag{font-family:var(--display);letter-spacing:.2em;color:var(--gold-deep
   <div class="lotus" aria-hidden="true"><img src="../img/bot_left.png" alt=""><img src="../img/bot_right.png" alt=""></div>
 </footer>
 
+<script src="../guests.js"></script>
 <script>
 (function(){
   // Countdown to Ganesh Sthapana: 23 Nov 2026, 7:15 AM IST
@@ -371,9 +372,19 @@ footer .tag{font-family:var(--display);letter-spacing:.2em;color:var(--gold-deep
   tick(); setInterval(tick,1000);
 
 
-  // ---------- personalised guest name from the link (?to=Name&at=Place) ----------
+  // ---------- personalised guest: short link ?Salutation-Firstname (old ?to=Name&at=Place also works) ----------
   try{
-    var q=new URLSearchParams(location.search), to=(q.get("to")||"").trim(), at=(q.get("at")||"").trim();
+    var raw=location.search.replace(/^\?/,""), to="", at="";
+    if(/(^|&)to=/.test(raw)){ var q=new URLSearchParams(raw); to=(q.get("to")||"").trim(); at=(q.get("at")||"").trim(); }
+    else if(raw){
+      var key=decodeURIComponent(raw.split("&")[0]).trim().toLowerCase().replace(/[\s_]+/g,"-").replace(/\./g,"");
+      var g=(window.GUESTS||{})[key];
+      if(g){
+        var here="ahmedabad";
+        if(g.v!==here){ location.replace((g.v==="ahmedabad" ? "../"+"ahmedabad/" : "../")+"?"+raw); return; }
+        to=g.n; at=g.p;
+      }
+    }
     if(to){
       var esc=function(t){return t.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});};
       document.getElementById("g-name").innerHTML=to.split("|").map(esc).join("<br>");
