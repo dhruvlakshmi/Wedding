@@ -189,7 +189,7 @@ footer .tag{font-family:var(--display);letter-spacing:.2em;color:var(--gold-deep
 <div class="gate" id="gate">
   <div class="door l"></div><div class="door r"></div>
   <div class="msg">
-    <div class="dear">DEAR GUEST</div>
+    <div class="dear" id="g-dear">DEAR GUEST</div>
     <div class="inv">You are invited</div>
     <button class="seal" id="seal" type="button" aria-label="Open the invitation"><img src="img/dl.png" alt=""></button>
     <div class="tap">TAP THE SEAL TO OPEN</div>
@@ -227,8 +227,8 @@ footer .tag{font-family:var(--display);letter-spacing:.2em;color:var(--gold-deep
     <div class="it">solicit the precious blessings of</div>
   </div>
   <div class="honour">
-    <div class="maroon">Shri Riddhi Siddhi Sahit Vinayak Maharaj</div>
-    <div>Shree Siddhivinayak Devsthan,<br>Mahemdavad, Gujarat</div>
+    <div class="maroon" id="g-name">You &amp; Your Family</div>
+    <div id="g-place" hidden></div>
   </div>
   <p class="center it" style="margin:14px 0 0">and request the honour of your presence to grace<br>the auspicious occasion of the wedding ceremony of their son</p>
   <div class="couple">
@@ -427,6 +427,19 @@ footer .tag{font-family:var(--display);letter-spacing:.2em;color:var(--gold-deep
   }
   tick(); setInterval(tick,1000);
 
+
+  // ---------- personalised guest name from the link (?to=Name&at=Place) ----------
+  try{
+    var q=new URLSearchParams(location.search), to=(q.get("to")||"").trim(), at=(q.get("at")||"").trim();
+    if(to){
+      var esc=function(t){return t.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});};
+      document.getElementById("g-name").innerHTML=to.split("|").map(esc).join("<br>");
+      if(at){ var gp=document.getElementById("g-place"); gp.textContent=at; gp.hidden=false; }
+      var lines=to.split("|"), keep=lines.filter(function(l){return !/^(swargiya|late)\b/i.test(l.trim());}), d=(keep.length?keep:lines).join(" ").replace(/\s+/g," ").trim();
+      document.getElementById("g-dear").textContent="DEAR "+d.toUpperCase();
+      var rn=document.getElementById("r-name"); if(rn && !rn.value){ rn.value=d; }
+    }
+  }catch(e){}
   // RSVP: build the WhatsApp link from the form (the page cannot send it itself)
   var f=document.getElementById("rsvp"), a=document.getElementById("r-send");
   function build(){
