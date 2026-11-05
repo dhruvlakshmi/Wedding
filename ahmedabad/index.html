@@ -89,6 +89,8 @@ section{padding:44px 0 8px}
 /* ---------- programme ---------- */
 .day{background:var(--card);border:1px solid rgba(166,124,46,.35);border-radius:10px;padding:22px 18px 16px;margin-top:18px}
 .day-head{text-align:center;margin-bottom:12px}
+.invoc{font-family:var(--display);color:var(--gold-deep);white-space:nowrap;letter-spacing:.01em;font-size:clamp(7.5px,2.5vw,13px);line-height:1.7}
+
 .day-date{font-family:var(--display);letter-spacing:.1em;font-size:.98rem;color:var(--cocoa);margin-top:4px}
 .day-place{font-style:italic;font-size:.95em}
 .ev{display:grid;grid-template-columns:1fr 18px 1fr;gap:6px;padding:7px 0;align-items:baseline}
@@ -282,7 +284,7 @@ footer .tag{font-family:var(--display);letter-spacing:.2em;color:var(--gold-deep
 
   <article class="day">
     <div class="day-head">
-      <div class="small" style="font-family:var(--display);letter-spacing:.12em;color:var(--gold-deep)">॥ SHREE GANESHAY NAMAH ॥ &nbsp; ॥ SHREE MATANGI NAMAH ॥</div>
+      <div class="invoc">॥ SHREE GANESHAY NAMAH ॥&ensp;॥ SHREE MATANGI NAMAH ॥</div>
       <div class="day-date">MONDAY, 23RD NOVEMBER 2026 · AHMEDABAD</div>
     </div>
     <div class="ev"><span class="name">Ganesh Sthapana</span><span class="dot">•</span><span class="time">7:15 AM</span></div>
@@ -336,7 +338,7 @@ footer .tag{font-family:var(--display);letter-spacing:.2em;color:var(--gold-deep
     <div class="row2">
       <div class="field"><label for="r-att">ATTENDING</label>
         <select id="r-att"><option value="yes">Yes, with joy</option><option value="no">Sorry, can't make it</option></select></div>
-      <div class="field"><label for="r-n">NUMBER OF GUESTS</label><input id="r-n" type="number" min="1" max="20" value="1" inputmode="numeric"></div>
+      <div class="field"><label for="r-n">NUMBER OF GUESTS</label><input id="r-n" type="number" min="1" max="50" inputmode="numeric" placeholder="e.g. 3"></div>
     </div>
     <div class="field"><label for="r-msg">MESSAGE (OPTIONAL)</label><textarea id="r-msg" placeholder="Your wishes for Dhruv &amp; Lakshmi"></textarea></div>
     <a class="wa" id="r-send" href="https://wa.me/919925257482">SEND RSVP ON WHATSAPP</a>
@@ -386,10 +388,10 @@ footer .tag{font-family:var(--display);letter-spacing:.2em;color:var(--gold-deep
   function build(){
     var name=document.getElementById("r-name").value.trim();
     var att=document.getElementById("r-att").value;
-    var n=parseInt(document.getElementById("r-n").value,10); if(!(n>0)) n=1;
+    var n=parseInt(document.getElementById("r-n").value,10);
     var msg=document.getElementById("r-msg").value.trim();
     var t="Namaste Dhruv! ";
-    t += att==="yes" ? ("We will attend the ceremonies on 23rd November in Ahmedabad. Number of guests: "+n+".") : "Sorry, we won't be able to attend, but our blessings are with you both.";
+    t += att==="yes" ? ("We will attend the ceremonies on 23rd November in Ahmedabad."+(n>0?" Number of guests: "+n+".":"")) : "Sorry, we won't be able to attend, but our blessings are with you both.";
     if(name) t += "\n— "+name;
     if(msg) t += "\n\n"+msg;
     a.href="https://wa.me/919925257482?text="+encodeURIComponent(t);
