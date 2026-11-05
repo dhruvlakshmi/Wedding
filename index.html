@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhruv &amp; Lakshmi Wedding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Pinyon+Script&family=Rasa:wght@500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Ivory hand-made paper, antique gold, kumkum maroon, cocoa ink, lotus-leaf sage.
+     Layout: one centred invitation column, read top to bottom like the printed card. */
+  --paper:#F6EDE3;
+  --gold:#A67C2E;
+  --gold-deep:#8A6424;
+  --gold-soft:#C9A45C;
+  --maroon:#AB2B3D;
+  --cocoa:#5C4033;
+  --sage:#7E8F63;
+  --card:rgba(255,251,244,.62);
+  --display:"Cinzel","Trajan Pro",Georgia,serif;
+  --body:"Cormorant Garamond","Cormorant",Garamond,Georgia,serif;
+  --script:"Pinyon Script","Great Vibes",cursive;
+  --guj:"Rasa","Noto Serif Gujarati","Shruti",serif;
+  --deva:"Tiro Devanagari Hindi","Noto Serif Devanagari",serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper) url("img/paper.jpg") repeat;background-size:520px;
+  color:var(--cocoa);font-family:var(--body);font-size:19px;line-height:1.5;
+}
+img{max-width:100%;display:block}
+a{color:var(--gold-deep)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--maroon);outline-offset:3px;border-radius:4px}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px}
+h2{font-family:var(--display);font-weight:500;color:var(--gold-deep);letter-spacing:.14em;text-align:center;font-size:clamp(1.35rem,4.6vw,1.75rem);margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-weight:500;color:var(--gold-deep);letter-spacing:.1em;font-size:1.02rem;margin:0;text-wrap:balance}
+.divider{width:min(320px,70%);margin:14px auto 22px;opacity:.95}
+section{padding:44px 0 8px}
+.center{text-align:center}
+.it{font-style:italic}
+.maroon{color:var(--maroon);font-weight:600}
+.small{font-size:.86em}
+
+/* ---------- cover ---------- */
+.cover{padding:18px 0 0}
+.card{position:relative;width:min(100%,520px);margin:0 auto;aspect-ratio:2100/2970;container-type:inline-size;
+  background:url("img/cover_bg.jpg") center/cover no-repeat;border-radius:6px;box-shadow:0 10px 34px rgba(92,64,51,.18);overflow:hidden}
+.card .arch{position:absolute;inset:0;width:100%;height:100%}
+.card .inner{position:absolute;left:17%;right:17%;top:22%;text-align:center}
+.card .dl{width:38cqw;margin:0 auto}
+.card .the{font-family:var(--display);color:var(--gold-deep);letter-spacing:.18em;font-size:3.2cqw;margin-top:3.5cqw}
+.card .names{font-family:var(--script);color:var(--gold-deep);font-size:9.2cqw;line-height:1.15;margin-top:.6cqw}
+.card .names span{font-family:var(--body);font-style:italic;font-size:.55em;color:var(--gold)}
+.card .verse{font-style:italic;font-size:3.1cqw;line-height:1.35;margin-top:1.8cqw}
+
+/* ---------- invitation ---------- */
+.deities{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:10px;max-width:520px;margin:0 auto}
+.deity{text-align:center}
+.deity img{height:126px;width:auto;margin:0 auto;filter:drop-shadow(0 3px 6px rgba(92,64,51,.18))}
+.deity .lbl{font-family:var(--guj);color:var(--gold-deep);font-size:.84rem;margin-top:6px;white-space:nowrap}
+.lavmono{width:150px;margin:0 auto 8px}
+.bless{text-align:center;font-style:italic;margin-top:18px}
+.parents{text-align:center;margin-top:14px}
+.parents .maroon{font-size:1.12em}
+.honour{max-width:420px;margin:12px auto;padding:10px 0;border-top:1px solid var(--gold-soft);border-bottom:1px solid var(--gold-soft);text-align:center}
+.couple{text-align:center;margin-top:12px}
+.couple .n{font-family:var(--script);color:var(--gold-deep);font-size:clamp(3rem,13vw,4.2rem);line-height:1.1}
+.couple .with{font-style:italic}
+.date{font-family:var(--display);letter-spacing:.12em;text-align:center;margin-top:14px;font-size:1.06rem;color:var(--cocoa)}
+
+/* ---------- countdown ---------- */
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:460px;margin:0 auto}
+.count div{background:var(--card);border:1px solid rgba(166,124,46,.35);border-radius:8px;padding:10px 4px;text-align:center}
+.count b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,6vw,2rem);color:var(--maroon);font-variant-numeric:tabular-nums}
+.count span{font-family:var(--display);font-size:.66rem;letter-spacing:.16em;color:var(--gold-deep)}
+.count-note{text-align:center;font-style:italic;margin-top:12px}
+
+/* ---------- story ---------- */
+.story{display:flex;gap:14px;align-items:flex-start;justify-content:center}
+.story img:nth-child(1){flex:751 1 0;min-width:0;height:auto}
+.story img:nth-child(2){flex:443 1 0;min-width:0;height:auto}
+.story img{border-radius:6px;box-shadow:0 6px 20px rgba(92,64,51,.16);width:100%}
+@media (max-width:520px){.story{flex-direction:column;align-items:center}.story img:nth-child(1),.story img:nth-child(2){flex:none;width:100%;max-width:420px}}
+
+/* ---------- programme ---------- */
+.day{background:var(--card);border:1px solid rgba(166,124,46,.35);border-radius:10px;padding:22px 18px 16px;margin-top:18px}
+.day-head{text-align:center;margin-bottom:12px}
+.day-date{font-family:var(--display);letter-spacing:.1em;font-size:.98rem;color:var(--cocoa);margin-top:4px}
+.day-place{font-style:italic;font-size:.95em}
+.ev{display:grid;grid-template-columns:1fr 18px 1fr;gap:6px;padding:7px 0;align-items:baseline}
+.ev .name{font-family:var(--display);font-size:.86rem;letter-spacing:.08em;color:var(--maroon);text-align:right}
+.ev .dot{color:var(--gold);text-align:center}
+.ev .time{font-variant-numeric:tabular-nums}
+.ev .note{display:block;font-style:italic;font-size:.88em;line-height:1.3}
+.venue{text-align:center;margin:8px 0 10px;line-height:1.35}
+.venue .at{font-family:var(--display);color:var(--gold);letter-spacing:.2em;font-size:.78rem}
+.venue strong{font-weight:600}
+.jaan{border-top:1px solid rgba(166,124,46,.35);margin-top:12px;padding-top:12px;text-align:center}
+.jaan h3{color:var(--maroon)}
+.cal{display:block;text-align:center;margin-top:10px;font-size:.92rem}
+.btnlink{display:inline-block;font-family:var(--display);font-size:.72rem;letter-spacing:.14em;color:var(--gold-deep);text-decoration:none;border:1px solid var(--gold-soft);border-radius:999px;padding:6px 14px;background:rgba(255,251,244,.7)}
+.btnlink:hover{background:#fff8ec}
+
+/* ---------- venues ---------- */
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+.v{background:var(--card);border:1px solid rgba(166,124,46,.35);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.v h3{font-size:.86rem}
+.v p{margin:0;font-size:.95em;line-height:1.35}
+.v .btnlink{align-self:flex-start;margin-top:auto}
+@media (max-width:520px){.vgrid{grid-template-columns:1fr}}
+.route{background:var(--card);border:1px solid rgba(166,124,46,.35);border-radius:10px;padding:16px;margin-top:14px}
+.route img{border-radius:6px;margin:10px auto 12px}
+.stops{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.stops li{display:grid;grid-template-columns:150px 1fr;gap:10px;align-items:baseline}
+.stops .k{font-style:italic;text-align:right;color:var(--gold-deep)}
+@media (max-width:440px){.stops li{grid-template-columns:1fr}.stops .k{text-align:left}}
+
+/* ---------- family ---------- */
+.fam{text-align:center}
+.fam h3{margin-top:22px;margin-bottom:6px}
+.fam p{margin:2px 0}
+.fam .quote,.quote{font-style:italic;max-width:470px;margin:14px auto 0;margin-left:auto;margin-right:auto;text-align:center;display:block}
+.sign{font-family:var(--script);color:var(--maroon);font-size:2.3rem;line-height:1.1;text-align:center;display:block;width:100%}
+.sign.small2{font-size:1.6rem;color:var(--gold-deep)}
+
+/* ---------- rsvp ---------- */
+.rsvp{background:var(--card);border:1px solid rgba(166,124,46,.35);border-radius:10px;padding:20px 18px;max-width:520px;margin:0 auto}
+.field{display:grid;gap:4px;margin-bottom:12px}
+label{font-family:var(--display);font-size:.72rem;letter-spacing:.14em;color:var(--gold-deep)}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--cocoa);background:#fffaf2;border:1px solid var(--gold-soft);border-radius:6px;padding:9px 10px;width:100%}
+textarea{min-height:70px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.wa{display:block;text-align:center;text-decoration:none;font-family:var(--display);letter-spacing:.12em;font-size:.86rem;color:#fff;background:var(--maroon);border-radius:999px;padding:12px 16px;margin-top:6px}
+.wa:hover{background:#962436}
+.contact{text-align:center;margin-top:12px;font-size:.95em}
+
+
+/* ---------- opening doors ---------- */
+.gate{position:fixed;inset:0;z-index:50;display:flex;perspective:1600px;background:transparent}
+.gate .door{flex:1;height:100%;background:var(--paper) url("img/paper.jpg") repeat;background-size:520px;position:relative;
+  transition:transform 1.4s cubic-bezier(.6,.05,.25,1), opacity 1.4s ease;box-shadow:inset 0 0 0 1px rgba(166,124,46,.25)}
+.gate .door.l{transform-origin:left center;border-right:1px solid var(--gold-soft)}
+.gate .door.r{transform-origin:right center;border-left:1px solid var(--gold-soft)}
+.gate .door::before{content:"";position:absolute;inset:18px;border:1px solid var(--gold-soft);border-radius:4px}
+.gate .door.l::before{right:10px}.gate .door.r::before{left:10px}
+.gate .msg{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px;pointer-events:none}
+.gate .dear{font-family:var(--display);letter-spacing:.3em;font-size:.78rem;color:var(--gold-deep)}
+.gate .inv{font-family:var(--script);font-size:clamp(2.6rem,11vw,3.6rem);color:var(--gold-deep);line-height:1}
+.gate .seal{pointer-events:auto;width:128px;height:128px;border-radius:50%;border:0;cursor:pointer;padding:0;
+  background:radial-gradient(circle at 35% 30%,#fff7e6 0,#f3e2c4 45%,#e2c58f 100%);
+  box-shadow:0 0 0 3px #fff8ec,0 0 0 5px var(--gold-soft),0 8px 26px rgba(138,100,36,.35);display:grid;place-items:center}
+.gate .seal img{width:78%;height:auto}
+.gate .tap{font-family:var(--display);letter-spacing:.24em;font-size:.68rem;color:var(--gold-deep)}
+.gate .names{font-family:var(--script);font-size:1.9rem;color:var(--gold-deep)}
+.gate.open .door.l{transform:rotateY(-105deg);opacity:.0}
+.gate.open .door.r{transform:rotateY(105deg);opacity:.0}
+.gate.open .msg{opacity:0;transition:opacity .5s ease}
+.gate.gone{display:none}
+body.locked{overflow:hidden}
+@media (prefers-reduced-motion:no-preference){.gate .seal{animation:pulse 2.4s ease-in-out infinite}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@media (prefers-reduced-motion:reduce){.gate .door{transition:opacity .4s}}
+
+/* ---------- scratch card ---------- */
+.scratch{position:relative;-webkit-user-select:none;user-select:none;max-width:360px;margin:0 auto 22px;border-radius:12px;overflow:hidden;
+  border:1px solid rgba(166,124,46,.45);background:var(--card);box-shadow:0 6px 20px rgba(92,64,51,.12)}
+.scratch .face{padding:20px 16px;text-align:center}
+.scratch .big{display:flex;justify-content:center;gap:18px;align-items:flex-end}
+.scratch .big div{display:flex;flex-direction:column;align-items:center}
+.scratch .big b{font-family:var(--display);font-weight:500;color:var(--maroon);font-size:2.1rem;line-height:1.1}
+.scratch .big span{font-family:var(--display);font-size:.62rem;letter-spacing:.18em;color:var(--gold-deep)}
+.scratch .sub{font-style:italic;margin-top:8px}
+.scratch canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .8s ease}
+.scratch canvas.done{opacity:0;pointer-events:none}
+.hint{text-align:center;font-family:var(--display);font-size:.68rem;letter-spacing:.2em;color:var(--gold-deep);margin:-10px 0 18px}
+
+footer{text-align:center;padding:40px 0 0;position:relative}
+footer .lotus{display:flex;justify-content:space-between;align-items:flex-end;pointer-events:none}
+footer .lotus img{width:150px}
+footer .tag{font-family:var(--display);letter-spacing:.2em;color:var(--gold-deep)}
+@media (prefers-reduced-motion:no-preference){.count b{transition:color .3s}}
+</style>
+</head>
+<body class="locked">
+<div class="gate" id="gate">
+  <div class="door l"></div><div class="door r"></div>
+  <div class="msg">
+    <div class="dear">DEAR GUEST</div>
+    <div class="inv">You are invited</div>
+    <button class="seal" id="seal" type="button" aria-label="Open the invitation"><img src="img/dl.png" alt=""></button>
+    <div class="tap">TAP THE SEAL TO OPEN</div>
+    <div class="names">Dhruv &amp; Lakshmi</div>
+  </div>
+</div>
+
+<!-- ============ COVER ============ -->
+<header class="cover wrap">
+  <div class="card" role="img" aria-label="Cover: The wedding of Dhruv and Lakshmi">
+    <img class="arch" src="img/arch.png" alt="">
+    <div class="inner">
+      <img class="dl" src="img/dl.png" alt="D embracing L monogram with a lotus">
+      <div class="the">THE WEDDING OF</div>
+      <div class="names">Dhruv <span>&amp;</span> Lakshmi</div>
+      <div class="verse">As steady as the pole star, as graceful as the lotus,<br>a union written in the stars</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ INVITATION ============ -->
+<section aria-labelledby="inv">
+  <h2 id="inv" class="center" style="position:absolute;left:-9999px">Invitation</h2>
+  <div class="deities">
+    <div class="deity"><img src="img/ganesha.png" alt="Lord Ganesha"><div class="lbl">॥ શ્રી ગણેશાય નમઃ ॥</div></div>
+    <img class="lavmono" src="img/lav.png" alt="लव monogram with Lakshmi and Dhruv's names">
+    <div class="deity"><img src="img/mata.png" alt="Shree Modheshwari Matangi Mata"><div class="lbl">॥ જય મોઢેશ્વરી માતંગી માં ॥</div></div>
+  </div>
+  <p class="bless">With the divine blessings of Shree Ganeshji &amp; Goddess Modheshwari Matangi Maa,<br>the heavenly blessings of all our ancestors and<br>Late Smt. Taraben &amp; Late Shri Vishnuprasad Maneklal Trivedi</p>
+  <img class="divider" src="img/divider.png" alt="">
+  <div class="parents">
+    <div class="maroon">Smt. Varshaben &amp; Shri Bhanuprasad Vishnuprasad Trivedi</div>
+    <div class="it">solicit the precious blessings of</div>
+  </div>
+  <div class="honour">
+    <div class="maroon">Shri Riddhi Siddhi Sahit Vinayak Maharaj</div>
+    <div>Shree Siddhivinayak Devsthan,<br>Mahemdavad, Gujarat</div>
+  </div>
+  <p class="center it" style="margin:14px 0 0">and request the honour of your presence to grace<br>the auspicious occasion of the wedding ceremony of their son</p>
+  <div class="couple">
+    <div class="n">Dhruv</div>
+    <div class="with">with</div>
+    <div class="n">Lakshmi</div>
+    <div>Daughter of <span class="maroon">Smt. Kelibai &amp; Shri Banshilal Ji Omkarlal Ji Charan</span></div>
+  </div>
+  <div class="date">ON WEDNESDAY, 25TH NOVEMBER 2026</div>
+  <img class="divider" src="img/divider.png" alt="">
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<section aria-labelledby="cd" style="padding-top:12px">
+  <h2 id="cd">Save the Date</h2>
+  <img class="divider" src="img/divider.png" alt="">
+  <div class="scratch" id="scratch">
+    <div class="face">
+      <div class="big"><div><b>25</b><span>DAY</span></div><div><b>NOV</b><span>MONTH</span></div><div><b>2026</b><span>YEAR</span></div></div>
+      <div class="sub">Wednesday · Hastamelap at 3:26 PM</div>
+    </div>
+    <canvas id="scratch-c" aria-label="Scratch to reveal the date"></canvas>
+  </div>
+  <p class="hint" id="hint">✦ SCRATCH TO REVEAL THE DATE ✦</p>
+  <h3 class="center" style="margin:6px 0 12px">COUNTING DOWN TO THE HASTAMELAP</h3>
+  <div class="count" id="count" aria-live="off">
+    <div><b id="cd-d">–</b><span>DAYS</span></div>
+    <div><b id="cd-h">–</b><span>HOURS</span></div>
+    <div><b id="cd-m">–</b><span>MINUTES</span></div>
+    <div><b id="cd-s">–</b><span>SECONDS</span></div>
+  </div>
+  <p class="count-note" id="cd-note">Wednesday, 25th November 2026 · 3:26 PM · Tanishq The Resort of Fun, Nimbahera</p>
+</section>
+
+<!-- ============ OUR STORY ============ -->
+<section aria-labelledby="story">
+  <h2 id="story">Our Story</h2>
+  <img class="divider" src="img/divider.png" alt="">
+  <div class="story">
+    <img src="img/story1.jpg" alt="Lakshmi and Dhruv, guided by their grace, written in our stars">
+    <img src="img/story2.jpg" alt="Our story: D embracing L, and लव, a hidden blessing">
+  </div>
+</section>
+
+<!-- ============ PROGRAMME ============ -->
+<section aria-labelledby="prog">
+  <h2 id="prog">Programme</h2>
+  <img class="divider" src="img/divider.png" alt="">
+  <p class="center it" style="margin:0">Trivedi Family cordially invites you to attend the following ceremonies</p>
+
+  <article class="day">
+    <div class="day-head">
+      <div class="small" style="font-family:var(--display);letter-spacing:.12em;color:var(--gold-deep)">॥ SHREE GANESHAY NAMAH ॥ &nbsp; ॥ SHREE MATANGI NAMAH ॥</div>
+      <div class="day-date">MONDAY, 23RD NOVEMBER 2026 · AHMEDABAD</div>
+    </div>
+    <div class="ev"><span class="name">Ganesh Sthapana</span><span class="dot">•</span><span class="time">7:15 AM</span></div>
+    <div class="ev"><span class="name">Mandap Muhurat</span><span class="dot">•</span><span class="time">8:00 AM</span></div>
+    <div class="venue"><span class="it">At their residence</span><br><strong>House A3-203, The Meadows, Adani Shantigram</strong><br><span class="it small">Guest entry is facilitated through Gate No. 1 only.</span></div>
+    <div class="ev"><span class="name">Grahshanti</span><span class="dot">•</span><span class="time">9:45 AM</span></div>
+    <div class="ev"><span class="name">Pithi</span><span class="dot">•</span><span class="time">11:00 AM</span></div>
+    <div class="ev"><span class="name">Lunch</span><span class="dot">•</span><span class="time">11:30 AM – 1:30 PM</span></div>
+    <div class="venue"><span class="at">AT</span><br><strong>The Grand Elinor Restaurant and Banquet</strong><br>Adani Shantigram, Near Vaishnodevi Circle, Ahmedabad</div>
+    <div class="jaan">
+      <h3>JAAN PRASTHAN</h3>
+      <div>6:30 PM</div>
+      <div>Departure from The Meadows, Gate No. 1, Adani Shantigram.</div>
+      <div class="it small">See the route and stoppages under Venues &amp; Directions.</div>
+    </div>
+    <a class="cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Dhruv%20%26%20Lakshmi%20%E2%80%93%20Ahmedabad%20ceremonies&amp;dates=20261123T014500Z/20261123T080000Z&amp;details=Ganesh%20Sthapana%207%3A15%20AM%2C%20Mandap%20Muhurat%208%3A00%20AM%2C%20Grahshanti%209%3A45%20AM%2C%20Pithi%2011%3A00%20AM%2C%20Lunch%2011%3A30%20AM%E2%80%931%3A30%20PM.%20Jaan%20Prasthan%206%3A30%20PM.&amp;location=The%20Meadows%2C%20Adani%20Shantigram%2C%20Ahmedabad"><span class="btnlink">ADD TO GOOGLE CALENDAR</span></a>
+  </article>
+
+  <article class="day">
+    <div class="day-head">
+      <h3>HALDI &amp; SANGEET</h3>
+      <div class="day-date">TUESDAY, 24TH NOVEMBER 2026</div>
+      <div class="day-place">Tanishq The Resort of Fun, Nimbahera, Rajasthan</div>
+    </div>
+    <div class="ev"><span class="name">Groom's Family Arrival</span><span class="dot">•</span><span class="time">On or before 6:00 AM</span></div>
+    <div class="ev"><span class="name">Breakfast</span><span class="dot">•</span><span class="time">8:00 AM onwards</span></div>
+    <div class="ev"><span class="name">Haldi Carnival Celebration</span><span class="dot">•</span><span class="time">11:30 AM<span class="note">Followed by Lunch</span></span></div>
+    <div class="ev"><span class="name">Ring Ceremony &amp; Sangeet</span><span class="dot">•</span><span class="time">7:00 PM<span class="note">Followed by Dinner</span></span></div>
+    <a class="cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Dhruv%20%26%20Lakshmi%20%E2%80%93%20Haldi%20%26%20Sangeet&amp;dates=20261124T060000Z/20261124T170000Z&amp;details=Haldi%20Carnival%20Celebration%2011%3A30%20AM%2C%20Ring%20Ceremony%20%26%20Sangeet%207%3A00%20PM.&amp;location=Tanishq%20The%20Resort%20of%20Fun%2C%20Nimbahera%2C%20Rajasthan"><span class="btnlink">ADD TO GOOGLE CALENDAR</span></a>
+  </article>
+
+  <article class="day">
+    <div class="day-head">
+      <h3>WEDDING DAY</h3>
+      <div class="day-date">WEDNESDAY, 25TH NOVEMBER 2026</div>
+      <div class="day-place">Tanishq The Resort of Fun, Nimbahera, Rajasthan</div>
+    </div>
+    <div class="ev"><span class="name">Breakfast</span><span class="dot">•</span><span class="time">8:00 AM onwards</span></div>
+    <div class="ev"><span class="name">Lunch</span><span class="dot">•</span><span class="time">12:00 PM onwards</span></div>
+    <div class="ev"><span class="name">Bindoli / Varghodo</span><span class="dot">•</span><span class="time">1:00 PM – 2:00 PM<span class="note">Outside Tanishq Hotel</span></span></div>
+    <div class="ev"><span class="name">Toran Ceremony</span><span class="dot">•</span><span class="time">2:00 PM<span class="note">At the Hotel Entry Gate</span></span></div>
+    <div class="ev"><span class="name">Varmala</span><span class="dot">•</span><span class="time">2:30 PM</span></div>
+    <div class="ev"><span class="name">Hastamelap</span><span class="dot">•</span><span class="time">3:26 PM</span></div>
+    <div class="ev"><span class="name">Reception</span><span class="dot">•</span><span class="time">7:00 PM<span class="note">Followed by Dinner</span></span></div>
+    <a class="cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Dhruv%20%26%20Lakshmi%20%E2%80%93%20Wedding%20Day&amp;dates=20261125T073000Z/20261125T170000Z&amp;details=Bindoli%2FVarghodo%201%3A00%20PM%2C%20Toran%202%3A00%20PM%2C%20Varmala%202%3A30%20PM%2C%20Hastamelap%203%3A26%20PM%2C%20Reception%207%3A00%20PM.&amp;location=Tanishq%20The%20Resort%20of%20Fun%2C%20Nimbahera%2C%20Rajasthan"><span class="btnlink">ADD TO GOOGLE CALENDAR</span></a>
+  </article>
+
+  <article class="day">
+    <div class="day-head">
+      <h3>VIDAI SAMAROH</h3>
+      <div class="day-date">THURSDAY, 26TH NOVEMBER 2026</div>
+    </div>
+    <div class="ev"><span class="name">Breakfast</span><span class="dot">•</span><span class="time">6:30 AM onwards<span class="note">At Tanishq The Resort of Fun, Nimbahera, Rajasthan.</span></span></div>
+    <div class="ev"><span class="name">Vidai Samaroh</span><span class="dot">•</span><span class="time">7:00 AM<span class="note">At Amrit Villa, Nimbahera, Rajasthan.</span></span></div>
+    <a class="cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Dhruv%20%26%20Lakshmi%20%E2%80%93%20Vidai%20Samaroh&amp;dates=20261126T013000Z/20261126T030000Z&amp;details=Breakfast%206%3A30%20AM%20at%20Tanishq%20The%20Resort%20of%20Fun.%20Vidai%20Samaroh%207%3A00%20AM%20at%20Amrit%20Villa.&amp;location=Amrit%20Villa%2C%20Nimbahera%2C%20Rajasthan"><span class="btnlink">ADD TO GOOGLE CALENDAR</span></a>
+  </article>
+</section>
+
+<!-- ============ VENUES ============ -->
+<section aria-labelledby="ven">
+  <h2 id="ven">Venues &amp; Directions</h2>
+  <img class="divider" src="img/divider.png" alt="">
+  <div class="vgrid">
+    <div class="v"><h3>1. The Meadows Residence — Ahmedabad</h3><p>House A3-203, The Meadows, Adani Shantigram.</p><p class="it small">Guest entry is facilitated through Gate No. 1 only.</p><a class="btnlink" href="https://maps.app.goo.gl/pkgRaG3xdsyKEYLj8">OPEN IN MAPS</a></div>
+    <div class="v"><h3>2. The Grand Elinor Restaurant and Banquet — Ahmedabad</h3><p>Adani Shantigram, Near Vaishnodevi Circle.</p><a class="btnlink" href="https://maps.app.goo.gl/t728nMsDDpBNgPqo8">OPEN IN MAPS</a></div>
+    <div class="v"><h3>3. Jaan Prasthan — The Meadows Gate No. 1</h3><p>Departure point, 23rd November, 6:30 PM.</p><a class="btnlink" href="https://maps.app.goo.gl/6VBWLnZzzCAJrzLc9">OPEN IN MAPS</a></div>
+    <div class="v"><h3>5. Tanishq The Resort of Fun — Nimbahera</h3><p>Haldi, Sangeet, Wedding Day and Reception.</p><a class="btnlink" href="https://maps.app.goo.gl/HzGHmHgqJYZvigmS6">OPEN IN MAPS</a></div>
+    <div class="v"><h3>6. Amrit Villa — Nimbahera</h3><p>Vidai Samaroh, 26th November.</p><a class="btnlink" href="https://maps.app.goo.gl/LSQUyYt5dQNngBXt7">OPEN IN MAPS</a></div>
+  </div>
+  <div class="route">
+    <h3 class="center">4. JAAN ROUTE &amp; STOPPAGES</h3>
+    <img src="img/route.jpg" alt="Route map from The Meadows, Ahmedabad, via Shree MarutiNandan Resort, Krishna Food Court and Imagica Resort to Tanishq The Resort of Fun, Nimbahera">
+    <ul class="stops">
+      <li><span class="k">Departure</span><span>The Meadows Gate No. 1, Adani Shantigram</span></li>
+      <li><span class="k">First Stop</span><span>Shree MarutiNandan Resort · <a href="https://maps.app.goo.gl/aDRuEduagyWfc1wo7?g_st=ic">Map</a></span></li>
+      <li><span class="k">Second Stop</span><span>Krishna Food Court · <a href="https://maps.app.goo.gl/TxbmKpJkh5chfSim8?g_st=ic">Map</a></span></li>
+      <li><span class="k">Third Stop</span><span>Imagica Resort · <a href="https://maps.app.goo.gl/TKZxGjAsMCAG9hqE6?g_st=ic">Map</a></span></li>
+      <li><span class="k">Final Destination</span><span>Tanishq The Resort of Fun, Nimbahera, Rajasthan</span></li>
+    </ul>
+    <p class="center" style="margin:14px 0 0"><a class="btnlink" href="https://maps.app.goo.gl/ft5bkKazwSFkWSoN6?g_st=ic">VIEW FULL ROUTE</a></p>
+  </div>
+</section>
+
+<!-- ============ FAMILY ============ -->
+<section aria-labelledby="fam" class="fam">
+  <h2 id="fam">Family &amp; Blessings</h2>
+  <img class="divider" src="img/divider.png" alt="">
+  <h3>ETERNAL BLESSINGS FROM ALL OUR ANCESTORS &amp;</h3>
+  <p>Late Smt. Taraben &amp; Late Shri Vishnuprasad Maneklal Trivedi</p>
+  <p>Late Shri Hitendrabhai Vishnuprasad Trivedi</p>
+  <p>Late Shri Ashvinbhai Vishnuprasad Trivedi</p>
+  <h3>EAGERLY AWAITING TO WELCOME</h3>
+  <p>Gangaswarup Smt. Chetnaben Hitendrabhai Trivedi</p>
+  <p>Gangaswarup Smt. Geetaben Ashvinbhai Trivedi</p>
+  <p>Smt. Neelamben &amp; Shri Yogeshbhai Vishnuprasad Trivedi</p>
+  <p>Smt. Rakshaben &amp; Shri Jagdishbhai Ramanlal Trivedi</p>
+  <h3>WITH LOVE</h3>
+  <p class="quote">“From tying his Rakhi to watching him tie the Knot, come let’s shower them with our blessings together”</p>
+  <div class="sign">Zankhana</div>
+  <p style="margin-top:12px">Shraddha, Pallavi, Paheli, Nihar, Jaynish, Kashyap</p>
+  <p class="quote" style="margin:8px auto 0">“Mara Mama na Lagna ma Jaroor Jaroor Padharjo”</p>
+  <div class="sign small2">Aarna</div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section aria-labelledby="rs">
+  <h2 id="rs">RSVP</h2>
+  <img class="divider" src="img/divider.png" alt="">
+  <form class="rsvp" id="rsvp" novalidate>
+    <div class="field"><label for="r-name">YOUR NAME</label><input id="r-name" type="text" autocomplete="name" placeholder="e.g. Shri Rameshbhai Patel"></div>
+    <div class="row2">
+      <div class="field"><label for="r-att">ATTENDING</label>
+        <select id="r-att"><option value="yes">Yes, with joy</option><option value="no">Sorry, can't make it</option></select></div>
+      <div class="field"><label for="r-n">NUMBER OF GUESTS</label><input id="r-n" type="number" min="1" max="20" value="1" inputmode="numeric"></div>
+    </div>
+    <div class="field"><label for="r-msg">MESSAGE (OPTIONAL)</label><textarea id="r-msg" placeholder="Your wishes for Dhruv &amp; Lakshmi"></textarea></div>
+    <a class="wa" id="r-send" href="https://wa.me/919925257482">SEND RSVP ON WHATSAPP</a>
+    <p class="contact small">Opens WhatsApp with your message ready to send to Dhruv.<br>Or call / WhatsApp: <strong>Dhruv Bhanuprasad Trivedi, +91 99252 57482</strong></p>
+  </form>
+</section>
+
+</main>
+
+<footer>
+  <div class="tag">WITH LOVE · DHRUV &amp; LAKSHMI</div>
+  <div style="font-family:var(--deva);color:var(--gold-deep);font-size:1.3rem;margin-top:4px">#लव</div>
+  <div class="lotus" aria-hidden="true"><img src="img/bot_left.png" alt=""><img src="img/bot_right.png" alt=""></div>
+</footer>
+
+<script>
+(function(){
+  // Countdown to Hastamelap: 25 Nov 2026, 3:26 PM IST
+  var target = Date.parse("2026-11-25T15:26:00+05:30");
+  var el = {d:document.getElementById("cd-d"),h:document.getElementById("cd-h"),m:document.getElementById("cd-m"),s:document.getElementById("cd-s")};
+  function pad(n){return (n<10?"0":"")+n;}
+  function tick(){
+    var ms = target - Date.now();
+    if (ms <= 0){ el.d.textContent="0"; el.h.textContent="00"; el.m.textContent="00"; el.s.textContent="00";
+      document.getElementById("cd-note").textContent="Dhruv & Lakshmi are married. Thank you for your blessings."; return; }
+    var s=Math.floor(ms/1000), d=Math.floor(s/86400); s-=d*86400;
+    var h=Math.floor(s/3600); s-=h*3600; var m=Math.floor(s/60); s-=m*60;
+    el.d.textContent=d; el.h.textContent=pad(h); el.m.textContent=pad(m); el.s.textContent=pad(s);
+  }
+  tick(); setInterval(tick,1000);
+
+  // RSVP: build the WhatsApp link from the form (the page cannot send it itself)
+  var f=document.getElementById("rsvp"), a=document.getElementById("r-send");
+  function build(){
+    var name=document.getElementById("r-name").value.trim();
+    var att=document.getElementById("r-att").value;
+    var n=parseInt(document.getElementById("r-n").value,10); if(!(n>0)) n=1;
+    var msg=document.getElementById("r-msg").value.trim();
+    var t="Namaste Dhruv! ";
+    t += att==="yes" ? ("We will attend the wedding celebrations. Number of guests: "+n+".") : "Sorry, we won't be able to attend, but our blessings are with you both.";
+    if(name) t += "\n— "+name;
+    if(msg) t += "\n\n"+msg;
+    a.href="https://wa.me/919925257482?text="+encodeURIComponent(t);
+  }
+  f.addEventListener("input",build); f.addEventListener("change",build);
+  f.addEventListener("submit",function(e){e.preventDefault();});
+  build();
+
+  // ---------- opening doors ----------
+  var gate=document.getElementById("gate"), seal=document.getElementById("seal");
+  function openGate(){
+    if(gate.classList.contains("open")) return;
+    gate.classList.add("open"); document.body.classList.remove("locked");
+    setTimeout(function(){gate.classList.add("gone");},1500);
+  }
+  seal.addEventListener("click",openGate);
+  gate.addEventListener("click",function(e){ if(e.target===gate) openGate(); });
+
+  // ---------- scratch to reveal ----------
+  var box=document.getElementById("scratch"), c=document.getElementById("scratch-c"), ctx=c.getContext("2d"), hint=document.getElementById("hint");
+  var revealed=false, drawing=false, last=null;
+  function paint(){
+    var r=box.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
+    c.width=Math.round(r.width*dpr); c.height=Math.round(r.height*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    var g=ctx.createLinearGradient(0,0,r.width,r.height);
+    g.addColorStop(0,"#b8862b"); g.addColorStop(.35,"#e9c46a"); g.addColorStop(.55,"#c99a3c"); g.addColorStop(.8,"#f1d68e"); g.addColorStop(1,"#a67c2e");
+    ctx.globalCompositeOperation="source-over"; ctx.fillStyle=g; ctx.fillRect(0,0,r.width,r.height);
+    for(var i=0;i<380;i++){ ctx.fillStyle="rgba(255,248,220,"+(Math.random()*.35)+")"; ctx.fillRect(Math.random()*r.width,Math.random()*r.height,1.4,1.4); }
+    ctx.fillStyle="rgba(92,64,20,.85)"; ctx.textAlign="center"; ctx.textBaseline="middle";
+    ctx.font="600 13px Cinzel, Georgia, serif"; ctx.fillText("SCRATCH HERE",r.width/2,r.height/2-10);
+    ctx.font="italic 15px 'Cormorant Garamond', Georgia, serif"; ctx.fillText("to reveal the wedding date",r.width/2,r.height/2+12);
+  }
+  function pos(e){ var r=c.getBoundingClientRect(); return {x:e.clientX-r.left,y:e.clientY-r.top}; }
+  function scratchAt(p){
+    ctx.globalCompositeOperation="destination-out"; ctx.lineWidth=34; ctx.lineCap="round"; ctx.lineJoin="round";
+    ctx.beginPath(); ctx.moveTo((last||p).x,(last||p).y); ctx.lineTo(p.x,p.y); ctx.stroke(); last=p;
+  }
+  function check(){
+    try{
+      var d=ctx.getImageData(0,0,c.width,c.height).data, clear=0, n=0;
+      for(var i=3;i<d.length;i+=64){ n++; if(d[i]===0) clear++; }
+      if(clear/n>0.5) reveal();
+    }catch(err){ reveal(); }
+  }
+  function reveal(){ if(revealed) return; revealed=true; c.classList.add("done"); hint.textContent="✦ SEE YOU ON 25TH NOVEMBER ✦"; }
+  c.addEventListener("pointerdown",function(e){ if(revealed) return; drawing=true; last=null; c.setPointerCapture(e.pointerId); scratchAt(pos(e)); });
+  c.addEventListener("pointermove",function(e){ if(drawing) scratchAt(pos(e)); });
+  function end(){ if(!drawing) return; drawing=false; last=null; check(); }
+  c.addEventListener("pointerup",end); c.addEventListener("pointercancel",end);
+  c.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); reveal(); } });
+  c.tabIndex=0;
+  paint();
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(function(){ if(!revealed) paint(); }); }
+  window.addEventListener("resize",function(){ if(!revealed) paint(); });
+})();
+</script>
+</body>
+</html>
