@@ -226,12 +226,12 @@ window.GUESTS={
 "v": "ahmedabad"
 },
 "shri-bhavin": {
-"n": "Shri Bhavin Utekar",
+"n": "Shri Bhavin Uttekar",
 "p": "Ahmedabad, Gujarat",
 "v": "ahmedabad"
 },
 "smt-mansi": {
-"n": "Smt. Mansi",
+"n": "Smt. Mansi Parikh",
 "p": "Ahmedabad, Gujarat",
 "v": "ahmedabad"
 },
