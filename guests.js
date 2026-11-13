@@ -317,12 +317,12 @@ window.GUESTS={
 },
 "shri-daksheshbhai": {
 "n": "Shri Daksheshbhai Ishwarlal Jani",
-"p": "Ahmedabad, Gujarat",
+"p": "USA",
 "v": "ahmedabad"
 },
 "smt-mandaben": {
 "n": "Gangaswarup Smt. Mandaben|Hasmukhlal Trivedi",
-"p": "Ahmedabad, Gujarat",
+"p": "USA",
 "v": "ahmedabad"
 }
 };
