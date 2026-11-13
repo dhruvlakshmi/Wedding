@@ -304,5 +304,25 @@ window.GUESTS={
 "n": "Shri Bhavikbhai Acharya",
 "p": "Ahmedabad, Gujarat",
 "v": "ahmedabad"
+},
+"shri-ashishbhai": {
+"n": "Shri Ashishbhai Vyas",
+"p": "Ahmedabad, Gujarat",
+"v": "ahmedabad"
+},
+"shri-yogeshbhai-jani": {
+"n": "Shri Yogeshbhai Ishwarlal Jani",
+"p": "Ahmedabad, Gujarat",
+"v": "ahmedabad"
+},
+"shri-daksheshbhai": {
+"n": "Shri Daksheshbhai Ishwarlal Jani",
+"p": "Ahmedabad, Gujarat",
+"v": "ahmedabad"
+},
+"smt-mandaben": {
+"n": "Gangaswarup Smt. Mandaben|Hasmukhlal Trivedi",
+"p": "Ahmedabad, Gujarat",
+"v": "ahmedabad"
 }
 };
