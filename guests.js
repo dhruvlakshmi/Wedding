@@ -331,7 +331,7 @@ window.GUESTS={
 "v": "ahmedabad"
 },
 "shri-dipakbhai": {
-"n": "Shri Dipakbhai Umashankar Vyas",
+"n": "Shri Dipakbhai Umiyashankar Vyas",
 "p": "Bayal Dhankhrol",
 "v": "ahmedabad"
 },
