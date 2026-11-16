@@ -337,7 +337,7 @@ window.GUESTS={
 },
 "shri-sanjaybhai-trivedi": {
 "n": "Shri Sanjaybhai Kanhaiyalal Trivedi",
-"p": "Dhrisna",
+"p": "Dharisana",
 "v": "ahmedabad"
 }
 };
