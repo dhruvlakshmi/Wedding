@@ -329,5 +329,15 @@ window.GUESTS={
 "n": "Shri Manojbhai Ishwarlal Jani",
 "p": "USA",
 "v": "ahmedabad"
+},
+"shri-dipakbhai": {
+"n": "Shri Dipakbhai Umashankar Vyas",
+"p": "Bayal Dhankhrol",
+"v": "ahmedabad"
+},
+"shri-sanjaybhai-trivedi": {
+"n": "Shri Sanjaybhai Kanhaiyalal Trivedi",
+"p": "Dhrisna",
+"v": "ahmedabad"
 }
 };
