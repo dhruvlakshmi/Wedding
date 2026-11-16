@@ -324,5 +324,10 @@ window.GUESTS={
 "n": "Gangaswarup Smt. Mandaben|Hasmukhlal Trivedi",
 "p": "USA",
 "v": "ahmedabad"
+},
+"shri-manojbhai": {
+"n": "Shri Manojbhai Ishwarlal Jani",
+"p": "USA",
+"v": "ahmedabad"
 }
 };
