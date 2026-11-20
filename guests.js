@@ -343,11 +343,11 @@ window.GUESTS={
 "shri-hiren": {
 "n": "Shri Hiren Bhandari",
 "p": "Ahmedabad, Gujarat",
-"v": "ahmedabad"
+"v": "full"
 },
 "shri-bhavyen": {
 "n": "Shri Bhavyen Bhandari",
 "p": "Ahmedabad, Gujarat",
-"v": "ahmedabad"
+"v": "full"
 }
 };
