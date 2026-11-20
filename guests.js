@@ -339,5 +339,15 @@ window.GUESTS={
 "n": "Shri Sanjaybhai Kanhaiyalal Trivedi",
 "p": "Dharisana",
 "v": "ahmedabad"
+},
+"shri-hiren": {
+"n": "Shri Hiren Bhandari",
+"p": "Ahmedabad, Gujarat",
+"v": "ahmedabad"
+},
+"shri-bhavyen": {
+"n": "Shri Bhavyen Bhandari",
+"p": "Ahmedabad, Gujarat",
+"v": "ahmedabad"
 }
 };
