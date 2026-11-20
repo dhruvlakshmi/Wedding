@@ -238,7 +238,7 @@ window.GUESTS={
 "shri-jayminkumar": {
 "n": "Shri Jayminkumar Shah - Mantra Softech",
 "p": "Ahmedabad, Gujarat",
-"v": "ahmedabad"
+"v": "full"
 },
 "ms-riddhi": {
 "n": "Ms. Riddhi Kinariwala - Mantra Softech",
